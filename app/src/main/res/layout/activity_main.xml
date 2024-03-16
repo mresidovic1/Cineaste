@@ -7,55 +7,41 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout"
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:layout_marginBottom="93dp"
+        android:ems="10"
+        android:hint="Unesi tekst"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/listView1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:text="DODAJ"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText1" />
+
+    <ListView
+        android:id="@+id/listView1"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <EditText
-            android:id="@+id/editText1"
-            android:layout_width="225dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="92dp"
-            android:layout_marginEnd="92dp"
-            android:layout_marginBottom="600dp"
-            android:ems="10"
-            android:hint="Unesi tekst"
-            android:inputType="text" />
-
-        <Button
-            android:id="@+id/button1"
-            android:layout_width="129dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="140dp"
-            android:layout_marginEnd="141dp"
-            android:layout_marginBottom="480dp"
-            android:text="PRIKAZI" />
-
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="115dp"
-            android:layout_marginTop="335dp"
-            android:layout_marginEnd="116dp"
-            android:layout_marginBottom="335dp"
-            android:fontFamily="cursive"
-            android:text="Hello World!"
-            android:textSize="34sp" />
-    </RelativeLayout>
+        app:layout_constraintTop_toBottomOf="@+id/editText1" />
 </androidx.constraintlayout.widget.ConstraintLayout>
