@@ -8,7 +8,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class MovieListAdapter(private var movies: List<Movie>) : RecyclerView.Adapter<MovieListAdapter.MovieViewHolder>() {
+class MovieListAdapter(private var movies: List<Movie>,
+                       private val onItemClicked: (movie:Movie) -> Unit) : RecyclerView.Adapter<MovieListAdapter.MovieViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
         val view = LayoutInflater
             .from(parent.context)
@@ -31,6 +32,7 @@ class MovieListAdapter(private var movies: List<Movie>) : RecyclerView.Adapter<M
                 .getIdentifier("picture$randomNum", "drawable", context.packageName)
         }
         holder.movieImage.setImageResource(id)
+        holder.itemView.setOnClickListener{ onItemClicked(movies[position]) }
     }
 
     fun updateMovies(movies: List<Movie>) {
