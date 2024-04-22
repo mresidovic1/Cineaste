@@ -1,19 +1,19 @@
 package com.example.cineaste
 
 import android.content.BroadcastReceiver
-import android.net.ConnectivityManager
-import android.widget.Toast
 import android.content.Context
 import android.content.Intent
+import android.net.ConnectivityManager
+import android.widget.Toast
 
 
 class ConnectivityBroadcastReceiver : BroadcastReceiver() {
 
     override fun onReceive(context: Context, intent: Intent) {
-        val connManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-        val mreza = connManager.activeNetwork
-        val conn = connManager.getNetworkCapabilities(mreza)
-        if (conn == null) {
+        val cm = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val network = cm.activeNetwork
+        val capabilities = cm.getNetworkCapabilities(network)
+        if (capabilities == null) {
             val toast = Toast.makeText(context, "Disconnected", Toast.LENGTH_SHORT)
             toast.show()
         } else {
