@@ -57,4 +57,7 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-intents:+")
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation("com.github.bumptech.glide:glide:5.0.0-rc01")
+    annotationProcessor("com.github.bumptech.glide:compiler:4.16.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1-Beta")
 }
