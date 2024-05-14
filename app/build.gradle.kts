@@ -25,6 +25,9 @@ android {
                 "proguard-rules.pro"
             )
         }
+        debug{
+            buildConfigField ("String", "TMDB_API_KEY", project.properties["TMDB_API_KEY"].toString())
+        }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -32,6 +35,9 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
+    }
+    buildFeatures {
+        buildConfig = true
     }
 }
 
