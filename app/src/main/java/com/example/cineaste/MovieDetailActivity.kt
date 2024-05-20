@@ -73,13 +73,10 @@ class MovieDetailActivity : AppCompatActivity() {
     private fun populateDetails() {
         title.text=movie.title
         releaseDate.text=movie.releaseDate
-        genre.text=movie.genre
         website.text=movie.homepage
         overview.text=movie.overview
         val context: Context = poster.context
         var id: Int = context.resources
-            .getIdentifier(movie.genre, "drawable", context.packageName)
-        if (id==0) id=context.resources
             .getIdentifier("picture1", "drawable", context.packageName)
         poster.setImageResource(id)
         Glide.with(context)
@@ -102,7 +99,7 @@ class MovieDetailActivity : AppCompatActivity() {
         movies.addAll(getRecentMovies())
         movies.addAll(getFavoriteMovies())
         val movie= movies.find { movie -> name == movie.title }
-        return movie?:Movie(0,"Test","Test","Test","Test","Test","Test","Test")    }
+        return movie?:Movie(0,"Test","Test","Test","Test","Test","Test")    }
     private fun showWebsite(){
         val webIntent = Intent(Intent.ACTION_VIEW, Uri.parse(movie.homepage))
         try {

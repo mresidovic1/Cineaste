@@ -36,7 +36,7 @@ class LatestMovieService : Service() {
     private var wakeLock: PowerManager.WakeLock? = null
     private var isServiceStarted = false
     private val tmdb_api_key : String = "a919d7dbc7a42cf617384b03844de6ac"
-    private var movie = Movie(1,"test","test","test","test","test","test","test")
+    private var movie = Movie(1,"test","test","test","test","test","test")
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate() {
         super.onCreate()

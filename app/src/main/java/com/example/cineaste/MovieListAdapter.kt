@@ -23,13 +23,8 @@ class MovieListAdapter(
     override fun getItemCount(): Int = movies.size
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
         holder.movieTitle.text = movies[position].title
-        val genreMatch: String? = movies[position].genre
         val context: Context = holder.movieImage.context
-        var id: Int = 0;
-        if (genreMatch!==null)
-            id = context.getResources()
-                .getIdentifier(genreMatch, "drawable", context.getPackageName())
-        if (id===0) id=context.getResources()
+        var id: Int = context.getResources()
             .getIdentifier("picture1", "drawable", context.getPackageName())
         holder.movieImage.setImageResource(id)
         holder.itemView.setOnClickListener{ onItemClicked(movies[position]) }

@@ -51,6 +51,8 @@ dependencies {
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.androidx.espresso.contrib)
+    implementation("com.squareup.retrofit2:retrofit:+")
+    implementation("com.squareup.retrofit2:converter-gson:+")
     testImplementation(libs.junit)
     testImplementation("junit:junit:+")
     androidTestImplementation("androidx.test.ext:junit:+")

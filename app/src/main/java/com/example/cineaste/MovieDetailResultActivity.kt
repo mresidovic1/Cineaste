@@ -7,16 +7,13 @@ import android.os.Build
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.bumptech.glide.Glide
 
 class MovieDetailResultActivity : AppCompatActivity() {
 
-    private  var movie= Movie(0, "Test", "Test", "Test", "Test", "Test", "Test", "Test")
+    private  var movie= Movie(0, "Test", "Test", "Test", "Test", "Test", "Test")
     private lateinit var title : TextView
     private lateinit var overview : TextView
     private lateinit var releaseDate : TextView
@@ -59,15 +56,10 @@ class MovieDetailResultActivity : AppCompatActivity() {
     private fun populateDetails() {
         title.text=movie.title
         releaseDate.text=movie.releaseDate
-        genre.text=movie.genre
         website.text=movie.homepage
         overview.text=movie.overview
         val context: Context = poster.getContext()
-        var id = 0;
-        if (movie.genre!==null)
-            id = context.getResources()
-                .getIdentifier(movie.genre, "drawable", context.getPackageName())
-        if (id===0) id=context.getResources()
+        var id =context.getResources()
             .getIdentifier("picture1", "drawable", context.getPackageName())
         Glide.with(context)
             .load(posterPath + movie.posterPath)
